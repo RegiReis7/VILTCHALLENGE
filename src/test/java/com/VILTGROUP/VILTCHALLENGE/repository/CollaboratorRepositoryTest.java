@@ -24,4 +24,9 @@ class CollaboratorRepositoryTest {
 
         collaboratorRepository.save(c);
     }
+
+    @Test
+    public void getCollaborators(){
+        collaboratorRepository.findAll();
+    }
 }

@@ -31,4 +31,10 @@ public class CollaboratorController {
     {
         return collaboratorService.postponeById(idCollaborator);
     }
+
+    @PostMapping("/collaborators/postpone/{id}")
+    public Collaborator takePostponedTag(@PathVariable("id") Long idCollaborator)
+    {
+        return collaboratorService.takePostponedTag(idCollaborator);
+    }
 }

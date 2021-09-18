@@ -11,4 +11,6 @@ public interface CollaboratorService {
     Collaborator insertCollaborator(Collaborator c);
 
     Collaborator postponeById(Long idCollaborator);
+
+    Collaborator takePostponedTag(Long idCollaborator);
 }
