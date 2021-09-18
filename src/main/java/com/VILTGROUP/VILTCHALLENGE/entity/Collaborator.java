@@ -28,4 +28,6 @@ public class Collaborator {
     private String firstName;
     private String lastName;
     private Double budget;
+    @Column(columnDefinition = "integer default 0")
+    private int postpone;
 }

@@ -9,4 +9,6 @@ public interface CollaboratorService {
     List<Collaborator> getCollaborators();
 
     Collaborator insertCollaborator(Collaborator c);
+
+    Collaborator postponeById(Long idCollaborator);
 }
