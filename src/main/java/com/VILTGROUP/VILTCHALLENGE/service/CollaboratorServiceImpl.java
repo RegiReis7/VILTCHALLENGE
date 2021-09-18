@@ -17,4 +17,9 @@ public class CollaboratorServiceImpl implements CollaboratorService {
     public List<Collaborator> getCollaborators() {
         return collaboratorRepository.findAll();
     }
+
+    @Override
+    public Collaborator insertCollaborator(Collaborator c) {
+        return collaboratorRepository.save(c);
+    }
 }
