@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://127.0.0.1:5500/")
 @RestController
+@RequestMapping("api/")
 public class CollaboratorController {
 
     @Autowired
@@ -26,13 +28,13 @@ public class CollaboratorController {
         return collaboratorService.insertCollaborator(c);
     }
 
-    @PostMapping("/collaborators/{id}")
+    @PutMapping("/collaborators/{id}")
     public Collaborator postponeById(@PathVariable("id") Long idCollaborator)
     {
         return collaboratorService.postponeById(idCollaborator);
     }
 
-    @PostMapping("/collaborators/postpone/{id}")
+    @PutMapping("/collaborators/postpone/{id}")
     public Collaborator takePostponedTag(@PathVariable("id") Long idCollaborator)
     {
         return collaboratorService.takePostponedTag(idCollaborator);

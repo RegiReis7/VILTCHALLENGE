@@ -5,6 +5,8 @@ import com.VILTGROUP.VILTCHALLENGE.repository.CollaboratorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -15,7 +17,9 @@ public class CollaboratorServiceImpl implements CollaboratorService {
 
     @Override
     public List<Collaborator> getCollaborators() {
-        return collaboratorRepository.findAll();
+        List<Collaborator> collaboratorList = collaboratorRepository.findAll();
+        Collections.reverse(collaboratorList);
+        return collaboratorList;
     }
 
     @Override
@@ -26,14 +30,14 @@ public class CollaboratorServiceImpl implements CollaboratorService {
     @Override
     public Collaborator postponeById(Long idCollaborator) {
         Collaborator c = collaboratorRepository.findById(idCollaborator).get();
-        c.setPostpone(1);
+        c.setPostpone(true);
         return collaboratorRepository.save(c);
     }
 
     @Override
     public Collaborator takePostponedTag(Long idCollaborator) {
         Collaborator c = collaboratorRepository.findById(idCollaborator).get();
-        c.setPostpone(0);
+        c.setPostpone(false);
         return collaboratorRepository.save(c);
     }
 }

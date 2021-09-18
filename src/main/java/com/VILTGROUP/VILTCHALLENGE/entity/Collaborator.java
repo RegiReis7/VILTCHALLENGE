@@ -25,9 +25,12 @@ public class Collaborator {
     )
     private Long idCollaborator;
 
+    @Column(nullable = false)
     private String firstName;
+    @Column(nullable = false)
     private String lastName;
-    private Double budget;
-    @Column(columnDefinition = "integer default 0")
-    private int postpone;
+    @Column(columnDefinition = "double default 0")
+    private double budget;
+    @Column(columnDefinition = "boolean default false")
+    private boolean postpone;
 }
