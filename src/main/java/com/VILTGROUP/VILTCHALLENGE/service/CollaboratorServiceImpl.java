@@ -19,6 +19,19 @@ public class CollaboratorServiceImpl implements CollaboratorService {
     public List<Collaborator> getCollaborators() {
         List<Collaborator> collaboratorList = collaboratorRepository.findAll();
         Collections.reverse(collaboratorList);
+
+        if(collaboratorList.size() > 1)
+        {
+            Collections.swap(collaboratorList, 0, 1);
+        }
+
+        for(int i = 0;i<collaboratorList.size();i++){
+            if(collaboratorList.get(i).isPostpone() && i+1 < collaboratorList.size())
+            {
+                Collections.swap(collaboratorList, i, i+1);
+            }
+        }
+
         return collaboratorList;
     }
 
