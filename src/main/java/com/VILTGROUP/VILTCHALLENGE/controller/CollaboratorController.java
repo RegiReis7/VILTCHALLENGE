@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://127.0.0.1:5500/")
+@CrossOrigin(origins = "https://regireis7.github.io/")
 @RestController
 @RequestMapping("api/")
 public class CollaboratorController {
