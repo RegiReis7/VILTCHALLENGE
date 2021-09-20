@@ -16,7 +16,7 @@ This application is packaged as a jar which has Tomcat embedded. No Tomcat or JB
 
 - Clone this repository
 - You can build the project and run the tests by running mvn clean package
-- Once successfully built, you can run the service by this method:
+- Once successfully built, you can run the app by this method:
 ```bash
   java -jar target/VILTCHALLENGE-0.0.1-SNAPSHOT.jar
 ```
